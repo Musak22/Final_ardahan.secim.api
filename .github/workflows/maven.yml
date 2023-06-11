@@ -30,4 +30,11 @@ jobs:
     - name: Build with Maven
       run: mvn -B test --file ArdahanSecimAPI/pom.xml
 
-   
+   - name: Kapsama Oranı Ekle
+      id: jacoco
+      uses: madrapps/jacoco-report@v1.3
+      with:
+        paths: ${{ github.workspace }}/ArdahanSecimAPI/target/site/jacoco/jacoco.xml
+        token: ${{ secrets.GITHUB_TOKEN }}
+        min-coverage-overall: 40
+        min-coverage-changed-files: 60
