@@ -30,7 +30,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B test --file ArdahanSecimAPI/pom.xml
 
-   - name: Kapsama Oranı Ekle
+    - name: Kapsama Oranı Ekle
       id: jacoco
       uses: madrapps/jacoco-report@v1.3
       with:
